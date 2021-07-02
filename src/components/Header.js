@@ -4,8 +4,10 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { Link as MyLink } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const useStyles = makeStyles((theme) => ({
     '@global': {
@@ -26,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         margin: theme.spacing(1, 1.5),
+        textDecoration : 'none'
     },
 }))
 
@@ -37,26 +40,33 @@ export default function Header() {
             <CssBaseline />
             <AppBar color="primary" position="static" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
-                    <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-                        Fiverr Lite
+
+                    <Typography variant="h5" color="inherit" noWrap className={classes.toolbarTitle}>
+                        <MyLink variant="button" className="NavBarLink">
+                            <Link to="/" style={{textDecoration: 'none', color :'white', fontSize: '25px'}} className={classes.link} >Fiverr Lite</Link>
+                        </MyLink>
                     </Typography>
                     <nav>
-                        <Link variant="button" color="inherit" href="#" className={classes.link}>
+                        <MyLink variant="button" color="inherit" href="#" className={classes.link}>
                             Features
-                        </Link>
-                        <Link variant="button" color="inherit" href="#" className={classes.link}>
+                        </MyLink>
+                        <MyLink variant="button" color="inherit" href="#" className={classes.link}>
                             Enterprise
-                        </Link>
-                        <Link variant="button" color="inherit" href="#" className={classes.link}>
+                        </MyLink>
+                        <MyLink variant="button" color="inherit" href="#" className={classes.link}>
                             Support
-                        </Link>
+                        </MyLink>
                     </nav>
-                    <Button href="#" style={{backgroundColor: '#ffff00'}} variant="outlined" className={classes.link}>
-                        Register
-                    </Button>
-                    <Button href="#" style={{backgroundColor: '#ffff00'}} variant="outlined" className={classes.link}>
-                        Login
-                    </Button>
+                    <Link to="/register" style={{ textDecoration: 'none' }}>
+                        <Button style={{ backgroundColor: '#ffff00' }} variant="outlined" className={classes.link}>
+                            Register
+                        </Button>
+                    </Link>
+                    <Link to="/login" style={{ textDecoration: 'none' }}>
+                        <Button style={{ backgroundColor: '#ffff00' }} variant="outlined" className={classes.link}>
+                            Login
+                        </Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
 
