@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         margin: theme.spacing(1, 1.5),
-        textDecoration : 'none'
+        textDecoration: 'none'
     },
 }))
 
@@ -40,11 +40,8 @@ export default function Header() {
             <CssBaseline />
             <AppBar color="primary" position="static" elevation={0} className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
-
                     <Typography variant="h5" color="inherit" noWrap className={classes.toolbarTitle}>
-                        <MyLink variant="button" className="NavBarLink">
-                            <Link to="/" style={{textDecoration: 'none', color :'white', fontSize: '25px'}} className={classes.link} >Fiverr Lite</Link>
-                        </MyLink>
+                        <Link to="/" style={{ textDecoration: 'none', color: 'white', fontSize: '25px', textTransform: 'uppercase' }} className={classes.link} >Fiverr Lite</Link>
                     </Typography>
                     <nav>
                         <MyLink variant="button" color="inherit" href="#" className={classes.link}>
