@@ -18,11 +18,11 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        Rajesh Kumar
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
+      {'. Developed By : Rajesh Kumar'}
     </Typography>
   );
 }
@@ -84,7 +84,16 @@ export default function Register() {
                 id="lastName"
                 label="Last Name"
                 name="lastName"
-                autoComplete="lname"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="username"
+                label="username"
+                name="username"
               />
             </Grid>
             <Grid item xs={12}>
@@ -95,7 +104,6 @@ export default function Register() {
                 id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
               />
             </Grid>
             <Grid item xs={12}>
@@ -107,13 +115,12 @@ export default function Register() {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
               />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="I agree to Terms & Conditions of Fiverr-Lite"
               />
             </Grid>
           </Grid>
@@ -128,7 +135,7 @@ export default function Register() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
